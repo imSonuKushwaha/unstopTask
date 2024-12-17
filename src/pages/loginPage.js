@@ -77,11 +77,14 @@ const LoginPage = () => {
     try {
       const response = await fetch("https://dummyjson.com/auth/login", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           username: formData.username,
           password: formData.password,
-          email: formData.email,
-          expiresInMins: 30,
+          // email: formData.email,
+          // expiresInMins: 30,
         }),
       });
 
